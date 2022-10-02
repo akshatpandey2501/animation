@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+#logo{
+     background-color: #0082e6;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logoimg{
+    width: 50vw;
+    height: 20vh;
+
+}
+#background{
+    width: 100vw;
+    height: 70vh;
+}
+#controls{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#start,#stop,#fire{
+    height: 10vh;
+    width: 30vw;
+    background-color: #0082e6;
+}
+#fighter{
+    height: 30vh;
+    width: 30vw;
+    position: absolute;
+    top: 50vh;
+    left: 5vw;
+}
