@@ -36,18 +36,19 @@
 }
 #fighter{
     height: 30vh;
-    width: 30vw;
+    /* width: 30vw; */
     position: absolute;
     top: 50vh;
-    left: 5vw;
+    left: 9vw;
 }
 #energyball1{
     height: 20vh;
-    width:20vw;
+    /* width:20vw; */
     position: absolute;
     left: -19vw;
     display: none;
 }
+
 #playzone{
     position: absolute;
     top: 50vh;

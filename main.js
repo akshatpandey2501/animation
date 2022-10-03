@@ -9,15 +9,27 @@ function changeimage1(){
 }
 function changeimage2(){
     let showimage=document.getElementById('fighter')
-    if(showimage.src.match('img/Naruto_PNG_Picture.png')){
-        showimage.src='img/naruto-37609.png'
+    if(showimage.src.match('img/naruto.png')){
+        showimage.src='img/narutojump.png'
     }
     
 }
 function changeimage3(){
     let showimage=document.getElementById('fighter')
-    if(showimage.src.match('img/naruto-37609.png')){
-        showimage.src='img/Naruto_PNG_Picture.png'
+    if(showimage.src.match('img/narutojump.png')){
+        showimage.src='img/naruto.png'
+    }
+}
+function changeimage4(){
+    let showimage=document.getElementById('energyball1')
+    if(showimage.src.match('img/energyball1.png')){
+        showimage.src='img/energyball2.png'
+    }
+}
+function changeimage5(){
+    let showimage=document.getElementById('energyball1')
+    if(showimage.src.match('img/energyball1.png')){
+        showimage.src='img/energyball3.png'
     }
 }
 
@@ -47,6 +59,8 @@ function ballmovementhide(){
 }
 
 const energysound=new Audio("music/rasengan.mp3");
+const energysound1=new Audio("music/narutorasenshuriken.mp3");
+const energysound2=new Audio("music/oodama_rasengan.mp3");
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "ArrowLeft":
@@ -57,10 +71,16 @@ window.addEventListener("keydown", (event) => {
         energysound.play();
         break;
       case "ArrowUp":
-        ballmovement1();
+        changeimage4();
+        ballmovementshow();
+        window.setTimeout(ballmovement,1000);
+        energysound1.play();
         break;
       case "ArrowDown":
-        ballmovement2();
+        changeimage5();
+        ballmovementshow();
+        window.setTimeout(ballmovement,1000);
+        energysound2.play();
         break;
      
     }
@@ -68,14 +88,14 @@ window.addEventListener("keydown", (event) => {
   window.addEventListener("keyup", (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        window.setTimeout(changeimage3,2000);
+        window.setTimeout(changeimage3,1000);
         
         break;
       case "ArrowUp":
-        ballmovement1();
+        window.setTimeout(changeimage3,1000);
         break;
       case "ArrowDown":
-        ballmovement2();
+        window.setTimeout(changeimage3,1000);
         break;
      
     }
