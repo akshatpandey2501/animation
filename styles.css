@@ -6,7 +6,7 @@
 #logo{
      background-color: #0082e6;
     width: 100vw;
-    height: 20vh;
+    height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,4 +40,24 @@
     position: absolute;
     top: 50vh;
     left: 5vw;
+}
+#energyball1{
+    height: 20vh;
+    width:20vw;
+    position: absolute;
+    left: -19vw;
+    display: none;
+}
+#playzone{
+    position: absolute;
+    top: 50vh;
+    left: 35vw;
+}
+#enemy{
+    position: absolute;
+    height: 50vh;
+    width: 30vw;
+    left: 36vw;
+    bottom: -1vh;
+    top: -27vh;
 }
