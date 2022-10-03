@@ -21,16 +21,18 @@
     height: 70vh;
 }
 #controls{
-    height: 10vh;
+    height: 9vh;
     width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
 }
-#start,#stop,#fire{
-    height: 10vh;
-    width: 30vw;
+#start,#stop,#changeimage,#fire{
+    height: 9vh;
+    width:25vw;
     background-color: #0082e6;
+    color: white;
+    font-size: 2rem;
 }
 #fighter{
     height: 30vh;
