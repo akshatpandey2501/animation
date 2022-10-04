@@ -82,7 +82,7 @@ window.addEventListener("keydown", (event) => {
         changeimage2()
         changeimage6() 
       ballmovementshow();
-        window.setTimeout(ballmovement,1000);
+        window.setTimeout(ballmovement,0000);
      
         energysound.play();
         break;
