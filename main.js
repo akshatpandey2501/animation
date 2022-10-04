@@ -1,3 +1,5 @@
+ballmovement1();
+
 function changeimage1(){
     let showimage=document.getElementById('background')
     if(showimage.src.match('img/background.jpg')){
@@ -48,27 +50,64 @@ function changeimage6(){
 }
 }
 
-let m=-19;
+
 
 function ballmovementshow(){
     document.getElementById('energyball1').style.display = "inline";
     }
-function ballmovement(){
-    // document.getElementById('energyball1').style.transform="translatex(42vw)";
-        var id = setInterval(function () {
-          if (m >=40 ) {
-            m = -19;
-            ballmovementhide();
-            document.getElementById('energyball1').style.left=m+"vw"
-            clearInterval(id);
-          } else {
-            
-            document.getElementById('energyball1').style.left=m+"vw";
-          }
-          m = m + 1;
-        }, 25);
-      
-}
+    var m;
+    var n;
+    
+    
+    
+    function ballmovement(){
+      m=0;
+    
+      var id = setInterval(function () {
+    
+              
+              if (m >=80 ) {    
+                // m=0;            
+                document.getElementById('energyball1').style.left=m+"vw";
+                clearInterval(id);
+                
+              } else {
+                
+                document.getElementById("energyball1").style.left= m + "vw";
+              }
+              m = m + 1;
+              disappear(id,0)
+            }, 25);
+        }
+        function ballmovement1(){
+          n=0;
+    
+                var id = setInterval(function () {
+    
+                  if (n >=80 ) {
+                    // n=0;
+                    document.getElementById('enemyball').style.right=n+"vw";
+                    clearInterval(id);
+                    ballmovement1();
+                  } else {
+                    
+                    document.getElementById("enemyball").style.right= n + "vw";
+                  }
+                  n = n + 1;
+                  disappear(id,1);
+                }, 25);
+            }
+            function disappear (id,bool){
+              if(60-n-m<=0){
+                if(bool==0)
+                  clearInterval(id);
+                document.getElementById("enemyball").style.display="none";
+                document.getElementById("energyball1").style.display="none";
+                document.getElementById('energyball1').style.left=0;
+                document.getElementById('enemyball').style.right=0;           
+                
+              }
+            }
 function ballmovementhide(){
     document.getElementById('energyball1').style.display = "none";
 }
@@ -88,12 +127,14 @@ window.addEventListener("keydown", (event) => {
         break;
       case "ArrowUp":
         changeimage4();
+        changeimage2()
         ballmovementshow();
         window.setTimeout(ballmovement,1000);
         energysound1.play();
         break;
       case "ArrowDown":
         changeimage5();
+        changeimage2()
         ballmovementshow();
         window.setTimeout(ballmovement,1000);
         energysound2.play();

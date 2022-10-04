@@ -38,27 +38,38 @@
     height: 30vh;
     /* width: 30vw; */
     position: absolute;
-    top: 50vh;
-    left: 9vw;
+    top: 11vh;
+    left: 1vw;
 }
 #energyball1{
-    height: 20vh;
-    /* width:20vw; */
+    /* height: 20vh; */
+    width:20vw;
     position: absolute;
-    left: -19vw;
-    display: none;
+    left: 0vw;
+    right: 0vw;
+    top: 12vh;
+    /* display: none; */
 }
 
 #playzone{
+    width: 100vw;
     position: absolute;
-    top: 50vh;
-    left: 35vw;
+    top: 31vh;
+    /* left: 35vw; */
+    height: 45vh;
 }
 #enemy{
     position: absolute;
     height: 50vh;
     width: 30vw;
-    left: 36vw;
+    left: 70vw;
     bottom: -1vh;
-    top: -27vh;
+}
+#enemyball{
+    /* height: 20vh; */
+    width:20vw;
+    position: absolute;
+    right:0vw;
+    top: 6vh;
+    /* display: none; */
 }
