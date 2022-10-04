@@ -1,5 +1,7 @@
-ballmovement1();
 
+var isCollide=0;
+var fighterhealth=100;
+var enemyhealth=100;
 function changeimage1(){
     let showimage=document.getElementById('background')
     if(showimage.src.match('img/background.jpg')){
@@ -53,10 +55,10 @@ function changeimage6(){
 
 
 function ballmovementshow(){
-    document.getElementById('energyball1').style.display = "inline";
+    document.getElementById("energyball1").style.display = "inline-block";
     }
-    var m;
-    var n;
+    var m=0;
+    var n=0;
     
     
     
@@ -66,63 +68,66 @@ function ballmovementshow(){
       var id = setInterval(function () {
     
               
-              if (m >=80 ) {    
-                // m=0;            
-                document.getElementById('energyball1').style.left=m+"vw";
+              if (60-n-m<=0) {  
+                n=0;  
+                m=0;            
+                document.getElementById('energyball1').style.left=0+"vw";
+                document.getElementById('enemyball').style.right=0+"vw";
+                document.getElementById('energyball1').style.display = "none";
                 clearInterval(id);
+                isCollide=1
                 
-              } else {
+              } 
+              else if(m>55){
+                enemyhealth-=20;
+                m=0;
+                document.getElementById('slider').style.width = enemyhealth + "%";
+                document.getElementById("energyball1").style.left= m + "vw";
+                document.getElementById('energyball1').style.display = "none";
+                clearInterval(id);
+              }
+              else {
                 
                 document.getElementById("energyball1").style.left= m + "vw";
-              }
+                }
               m = m + 1;
-              disappear(id,0)
-            }, 25);
+            }, 50);
         }
+
         function ballmovement1(){
           n=0;
     
-                var id = setInterval(function () {
-    
-                  if (n >=80 ) {
-                    // n=0;
-                    document.getElementById('enemyball').style.right=n+"vw";
-                    clearInterval(id);
-                    ballmovement1();
+                var id1 = setInterval(function () {
+                  if (isCollide) {  
+                    clearInterval(id1);
+                    isCollide=0;
+                  }
+                  else if (n>80) {
+                    n=0;
+                    fighterhealth-=20;
+                    document.getElementById('enemyball').style.right=0+"vw";
+                    document.getElementById('slider1').style.width = fighterhealth + "%";
+                    clearInterval(id1);
+                    
                   } else {
                     
                     document.getElementById("enemyball").style.right= n + "vw";
                   }
                   n = n + 1;
-                  disappear(id,1);
-                }, 25);
+                }, 50);
             }
-            function disappear (id,bool){
-              if(60-n-m<=0){
-                if(bool==0)
-                  clearInterval(id);
-                document.getElementById("enemyball").style.display="none";
-                document.getElementById("energyball1").style.display="none";
-                document.getElementById('energyball1').style.left=0;
-                document.getElementById('enemyball').style.right=0;           
-                
-              }
-            }
-function ballmovementhide(){
-    document.getElementById('energyball1').style.display = "none";
-}
-
 const energysound=new Audio("music/rasengan.mp3");
 const energysound1=new Audio("music/narutorasenshuriken.mp3");
 const energysound2=new Audio("music/oodama_rasengan.mp3");
+const energysound3=new Audio("music/majestic_demolisher.mp3");
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        changeimage2()
-        changeimage6() 
-      ballmovementshow();
+        ballmovementshow(); 
+       changeimage2();
+        changeimage6(); 
+        ballmovementshow();
         window.setTimeout(ballmovement,0000);
-     
         energysound.play();
         break;
       case "ArrowUp":
@@ -154,7 +159,10 @@ window.addEventListener("keydown", (event) => {
       case "ArrowDown":
         window.setTimeout(changeimage3,1000);
         break;
-     
+        case "ArrowRight":          
+        ballmovement1();
+        energysound3.play();
+        break;
     }
   });
   
