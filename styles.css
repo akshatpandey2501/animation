@@ -6,14 +6,14 @@
 #logo{
      background-color: #0082e6;
     width: 100vw;
-    height: 15vh;
+    height: 19vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #logoimg{
     width: 50vw;
-    height: 15vh;
+    height: 18vh;
 
 }
 #background{
@@ -26,9 +26,11 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    
+    
 }
-#start,#stop,#changeimage,#fire{
-    height: 9vh;
+#changeimage{
+    height: 10vh;
     width:25vw;
     background-color: #0082e6;
     color: white;
@@ -38,7 +40,7 @@
     height: 30vh;
    
     position: absolute;
-    top: 13vh;
+    top: 17vh;
     left: 1vw;
 }
 #energyball1{
@@ -49,6 +51,27 @@
     right: 0vw;
     top: 10vh;
     display: none;
+   
+}
+#energyball2{
+    
+    width:20vw;
+    position: absolute;
+    left: 0vw;
+    right: 0vw;
+    top: 10vh;
+    display: none;
+   
+}
+#energyball3{
+    
+    width:20vw;
+    position: absolute;
+    left: 0vw;
+    right: 0vw;
+    top: 10vh;
+    display: none;
+   
 }
 
 #playzone{
@@ -63,7 +86,7 @@
     height: 50vh;
     width: 30vw;
     left: 70vw;
-    bottom: 4vh;
+    bottom: 1vh;
 }
 #enemyball{
     

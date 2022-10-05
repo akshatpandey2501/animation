@@ -24,75 +24,52 @@ function changeimage3(){
         showimage.src='img/naruto.png'
     }
 }
-function changeimage4(){
-    let showimage=document.getElementById('energyball1')
-    if(showimage.src.match('img/energyball1.png')){
-        showimage.src='img/energyball2.png'
-    }
-    else if(showimage.src.match('img/energyball3.png')){
-      showimage.src='img/energyball2.png'
-  }
-}
-function changeimage5(){
-    let showimage=document.getElementById('energyball1')
-    if(showimage.src.match('img/energyball1.png')){
-        showimage.src='img/energyball3.png'
-    }
-    else if(showimage.src.match('img/energyball2.png')){
-      showimage.src='img/energyball3.png'
-  }
-}
-function changeimage6(){
-  let showimage=document.getElementById('energyball1')
-  if(showimage.src.match('img/energyball2.png')){
-      showimage.src='img/energyball1.png'
-  }
-  else if(showimage.src.match('img/energyball3.png')){
-    showimage.src='img/energyball1.png'
-}
-}
-
-
 
 function ballmovementshow(){
     document.getElementById("energyball1").style.display = "inline-block";
     }
-    var m=0;
-    var n=0;
-    
-    
-    
-    function ballmovement(){
-      m=0;
-    
-      var id = setInterval(function () {
-    
-              
-              if (60-n-m<=0) {  
-                n=0;  
-                m=0;            
-                document.getElementById('energyball1').style.left=0+"vw";
-                document.getElementById('enemyball').style.right=0+"vw";
-                document.getElementById('energyball1').style.display = "none";
-                clearInterval(id);
-                isCollide=1
-                
-              } 
-              else if(m>55){
-                enemyhealth-=20;
-                m=0;
-                document.getElementById('slider').style.width = enemyhealth + "%";
-                document.getElementById("energyball1").style.left= m + "vw";
-                document.getElementById('energyball1').style.display = "none";
-                clearInterval(id);
-              }
-              else {
-                
-                document.getElementById("energyball1").style.left= m + "vw";
-                }
-              m = m + 1;
-            }, 50);
+    function ballmovementshow2(){
+      document.getElementById("energyball2").style.display = "inline-block";
+      }
+      function ballmovementshow3(){
+        document.getElementById("energyball3").style.display = "inline-block";
         }
+        var m=0;
+        var n=0;
+        
+        
+        
+        function ballmovement(){
+          m=0;
+        
+          var id = setInterval(function () {
+        
+                  
+                  if (68-n-m<=0) {  
+                    n=0;  
+                    m=0;            
+                    document.getElementById('energyball1').style.left=0+"vw";
+                    document.getElementById('enemyball').style.right=0+"vw";
+                    document.getElementById('energyball1').style.display = "none";
+                    clearInterval(id);
+                    isCollide=1
+                    
+                  } 
+                  else if(m>55){
+                    enemyhealth-=20;
+                    m=0;
+                    document.getElementById('slider').style.width = enemyhealth + "%";
+                    document.getElementById("energyball1").style.left= m + "vw";
+                    document.getElementById('energyball1').style.display = "none";
+                    clearInterval(id);
+                  }
+                  else {
+                    
+                    document.getElementById("energyball1").style.left= m + "vw";
+                    }
+                  m = m + 1;
+                }, 50);
+            }
 
         function ballmovement1(){
           n=0;
@@ -116,6 +93,79 @@ function ballmovementshow(){
                   n = n + 1;
                 }, 50);
             }
+            var i=0;
+            var n=0;
+            
+            
+            
+            function ballmovement2(){
+              i=0;
+            
+              var id2 = setInterval(function () {
+            
+                      
+                      if (68-n-i<=0) {  
+                        n=0;  
+                        i=0;            
+                        document.getElementById('energyball2').style.left=0+"vw";
+                        document.getElementById('enemyball').style.right=0+"vw";
+                        document.getElementById('energyball2').style.display = "none";
+                        clearInterval(id2);
+                        isCollide=1
+                        
+                      } 
+                      else if(i>55){
+                        enemyhealth-=20;
+                        i=0;
+                        document.getElementById('slider').style.width = enemyhealth + "%";
+                        document.getElementById("energyball2").style.left= i + "vw";
+                        document.getElementById('energyball2').style.display = "none";
+                        clearInterval(id2);
+                      }
+                      else {
+                        
+                        document.getElementById("energyball2").style.left= i + "vw";
+                        }
+                      i = i + 1;
+                    }, 50);
+                }
+                var k=0;
+                var n=0;
+                
+                
+                
+                function ballmovement3(){
+                  k=0;
+                
+                  var id3 = setInterval(function () {
+                
+                          
+                          if (68-n-k<=0) {  
+                            n=0;  
+                            k=0;            
+                            document.getElementById('energyball3').style.left=0+"vw";
+                            document.getElementById('enemyball').style.right=0+"vw";
+                            document.getElementById('energyball3').style.display = "none";
+                            clearInterval(id3);
+                            isCollide=1
+                            
+                          } 
+                          else if(k>55){
+                            enemyhealth-=20;
+                            k=0;
+                            document.getElementById('slider').style.width = enemyhealth + "%";
+                            document.getElementById("energyball3").style.left= k + "vw";
+                            document.getElementById('energyball3').style.display = "none";
+                            clearInterval(id3);
+                          }
+                          else {
+                            
+                            document.getElementById("energyball3").style.left= k + "vw";
+                            }
+                          k= k + 1;
+                        }, 50);
+                    }
+                
 const energysound=new Audio("music/rasengan.mp3");
 const energysound1=new Audio("music/narutorasenshuriken.mp3");
 const energysound2=new Audio("music/oodama_rasengan.mp3");
@@ -125,23 +175,22 @@ window.addEventListener("keydown", (event) => {
       case "ArrowLeft":
         ballmovementshow(); 
        changeimage2();
-        changeimage6(); 
-        ballmovementshow();
-        window.setTimeout(ballmovement,0000);
+       
+        ballmovement();
         energysound.play();
         break;
       case "ArrowUp":
-        changeimage4();
-        changeimage2()
-        ballmovementshow();
-        window.setTimeout(ballmovement,1000);
+        
+        changeimage2();
+        ballmovementshow2();
+        window.setTimeout(ballmovement2,0000);
         energysound1.play();
         break;
       case "ArrowDown":
-        changeimage5();
+        
         changeimage2()
-        ballmovementshow();
-        window.setTimeout(ballmovement,1000);
+        ballmovementshow3();
+        window.setTimeout(ballmovement3,0000);
         energysound2.play();
         break;
      
