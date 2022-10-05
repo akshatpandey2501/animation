@@ -2,6 +2,7 @@
 var isCollide=0;
 var fighterhealth=100;
 var enemyhealth=100;
+var ifpaused=0;
 function changeimage1(){
     let showimage=document.getElementById('background')
     if(showimage.src.match('img/background.jpg')){
@@ -28,21 +29,20 @@ function changeimage3(){
 function ballmovementshow(){
     document.getElementById("energyball1").style.display = "inline-block";
     }
-    function ballmovementshow2(){
-      document.getElementById("energyball2").style.display = "inline-block";
+function ballmovementshow2(){
+    document.getElementById("energyball2").style.display = "inline-block";
       }
-      function ballmovementshow3(){
-        document.getElementById("energyball3").style.display = "inline-block";
+function ballmovementshow3(){
+    document.getElementById("energyball3").style.display = "inline-block";
         }
-        var m=0;
-        var n=0;
-        
-        
+var m=0;
+var n=0;        
+var id=0,id1=0,id2=0,id3=0;
         
         function ballmovement(){
           m=0;
         
-          var id = setInterval(function () {
+          id = setInterval(function () {
         
                   
                   if (68-n-m<=0) {  
@@ -74,7 +74,7 @@ function ballmovementshow(){
         function ballmovement1(){
           n=0;
     
-                var id1 = setInterval(function () {
+                id1 = setInterval(function () {
                   if (isCollide) {  
                     clearInterval(id1);
                     isCollide=0;
@@ -101,7 +101,7 @@ function ballmovementshow(){
             function ballmovement2(){
               i=0;
             
-              var id2 = setInterval(function () {
+              id2 = setInterval(function () {
             
                       
                       if (68-n-i<=0) {  
@@ -137,7 +137,7 @@ function ballmovementshow(){
                 function ballmovement3(){
                   k=0;
                 
-                  var id3 = setInterval(function () {
+                  id3 = setInterval(function () {
                 
                           
                           if (68-n-k<=0) {  
@@ -173,45 +173,68 @@ const energysound3=new Audio("music/majestic_demolisher.mp3");
 window.addEventListener("keydown", (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        ballmovementshow(); 
+        if(!ifpaused){ballmovementshow(); 
        changeimage2();
        
         ballmovement();
-        energysound.play();
+        energysound.play();}
         break;
       case "ArrowUp":
-        
+        if(!ifpaused){
         changeimage2();
         ballmovementshow2();
         window.setTimeout(ballmovement2,0000);
-        energysound1.play();
+        energysound1.play();}
         break;
       case "ArrowDown":
-        
+        if(!ifpaused){
         changeimage2()
         ballmovementshow3();
         window.setTimeout(ballmovement3,0000);
-        energysound2.play();
+        energysound2.play();}
         break;
-     
+        case "ArrowRight":
+          if(!ifpaused){          
+        ballmovement1();
+        energysound3.play();}
+        break;
+        case " ":
+          if(!ifpaused){
+          document.getElementById("pause").style.display="flex";
+          document.getElementById("pause").style.bottom=0;
+          document.getElementById("game").style.opacity=0.5;
+          ifpaused=1;
+          clearInterval(id);
+          clearInterval(id1);
+          clearInterval(id2);
+          clearInterval(id3);
+        
+      }else{
+        document.getElementById("pause").style.display="none";
+          document.getElementById("pause").style.bottom=-100;
+          document.getElementById("game").style.opacity=1;
+          ifpaused=0;
+
+      }
+
     }
   });
   window.addEventListener("keyup", (event) => {
     switch (event.key) {
       case "ArrowLeft":
-        window.setTimeout(changeimage3,1000);
+        if(!ifpaused){ 
+        window.setTimeout(changeimage3,1000);}
         
         break;
       case "ArrowUp":
-        window.setTimeout(changeimage3,1000);
+        if(!ifpaused){ 
+        window.setTimeout(changeimage3,1000);}
         break;
       case "ArrowDown":
-        window.setTimeout(changeimage3,1000);
+        if(!ifpaused){ 
+        window.setTimeout(changeimage3,1000);}
         break;
-        case "ArrowRight":          
-        ballmovement1();
-        energysound3.play();
-        break;
+        
     }
   });
   
